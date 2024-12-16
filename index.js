@@ -1,20 +1,16 @@
-let arr = [1, 2 , 5, 3]    // Find missing number in array
+// Find Duplicate in Array
+let arr = [5, 1, 2, 3, 2, 3, 5]
 
-
-function findMissingInArray() {
-    arr.sort((a,b) => (a-b))
-    console.log(arr)
-    let missingNum;
-    for(let i=0; i<arr.length; i++) {
-        
-        if(arr[i] !== i + 1) {
-            return i + 1
+var duplicateArr = []
+function findDupliacteInArray() {
+    
+    for(let i=0; i<arr.length; i++){
+        for(let j=i+1; j<arr.length; j++){
+            if(arr[i] === arr[j]) {
+                duplicateArr.push(arr[j])
+            }
         }
-        
     }
-    return null
 }
-
-
-console.log("Missing Number:-", findMissingInArray())
-
+findDupliacteInArray()
+console.log(duplicateArr);
